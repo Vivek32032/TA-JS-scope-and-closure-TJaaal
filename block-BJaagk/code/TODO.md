@@ -6,9 +6,19 @@ function percentage(marks, total) {
 }
 
 // Your code goes here
+let percentage = function percentage(marks, total){
+  return (marks * 100) / total;
+}
+
 let percentage = function(marks, total){
   return (marks * 100) / total;
 }
+
+let percentage = (marks, total)=>{
+  return (marks * 100) / total;
+}
+let percentage = (marks, total)=>(marks * 100) / total;
+
 ```
 
 2. Write Function Declaration or Function Expression next to the function.
@@ -69,9 +79,9 @@ function add(a, b) {
   return a + b;
 }
 
-let five = add(2, 3); // Answer   Valid
+let five = add(2, 3); // Answer   Valid 5
 five = add; // Answer    valid
-five = five(10, 11); // Answer valid
+five = five(10, 11); // Answer valid 21
 five = function () {  
   return 'Hello';
 }; // Answer valid
@@ -86,11 +96,12 @@ ex:-
 function add(a, b) {
   return a + b;
 }
-//function call
+//function call 
 add(2,3)
 ```
 7. What is the similarities between function definition and function call?
-both can have aurguments.
+//function defination is an expression (functions is an object)
+//function call is an expression (function call always returns a value)
 
 8. Is the code below valid or invalid. Explain with reason.
 
@@ -99,11 +110,13 @@ function hello() {
   console.log('Hello World!');
 }
 
-hello.user = 'Sam'; // valid as function hello is an object so we and store key and value pair in it.
+hello.user = 'Sam'; // valid as function hello is an object so we can store key and value pair in it.
 ```
 
 9. What is higher order function explain with an example.
 a function calling or returning function is called higher order function.
+//-that accepts a function defination
+ //- that return a function defination
 
 10. Explain what is callback function. Why you can pass a function inside a function?
 

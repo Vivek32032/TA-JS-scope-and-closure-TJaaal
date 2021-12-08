@@ -26,7 +26,7 @@ var userMessage = sayHelloToUser('Bran');
 
 <!-- Put your image below -->
 
-![](./img/image-name.jpg)
+![img](./WhatsApp%20Image%202021-12-08%20at%2016.05.13.jpeg)
 
 2.
 

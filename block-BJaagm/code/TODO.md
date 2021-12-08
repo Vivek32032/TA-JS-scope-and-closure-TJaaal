@@ -12,6 +12,7 @@ This is the 'environment' a function executes in which JS code start its executi
    JavaScript engine creates the global execution context before it starts to execute any code.
 
 5. Execution context consists of what all things?
+two part one where we store memory like variables and functions.. and second where we execute our code.
 
 6. What are the different types of execution context?
 two type of execution context :- global execution context and function execution context
@@ -39,7 +40,7 @@ var userMsg = sayHello(user);
 
 <!-- Put your image here -->
 
-![](./img/image-name.jpg)
+![ans1](./WhatsApp%20Image%202021-12-08%20at%2015.42.48.jpeg)
 
 
 
@@ -57,7 +58,7 @@ var percentageProfit = getPercentage(400, 200);
 
 <!-- Put your image here -->
 
-![](./img/image-name.jpg)
+![ans2](./WhatsApp%20Image%202021-12-08%20at%2015.42.48%20(1).jpeg)
 
 
 
@@ -78,4 +79,4 @@ var whoAmIAgain = customeMessage(12);
 
 <!-- Put your image here -->
 
-![](./img/image-name.jpg)
+![ans](./WhatsApp%20Image%202021-12-08%20at%2015.42.48%20(2).jpeg)

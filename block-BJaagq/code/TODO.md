@@ -19,7 +19,9 @@ console.log(species); // 2
 
 <!-- Put your image below -->
 
-![](./img/image-name.jpg)
+![img1](./img11.jpeg)
+![img2](./img2.jpeg)
+
 
 - Create the execution context diagram
 - What will be the value of species on 1 and 2

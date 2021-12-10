@@ -7,8 +7,7 @@
 ```js
 function forEach(arr,cb) {
   arr.reduce((acc,cv,i,array)=>{
-     acc.push(cb(cv,i,arr))
-     return acc;
+     cb(cv,i,arr)
 },[])
 }
 
@@ -43,7 +42,7 @@ map(['Sam', 'Jon', 'Arya'], (name) => name + name); // ['SamSam', 'JonJon', 'Ary
 ```js
 function filter(arr,cb) {
 return (arr.reduce((acc,cv,i,array)=>{
-     if(cb(cv)==true){
+     if(cb(cv,i,array)==true){
      acc.push(cv);}
      return acc;
 },[]))

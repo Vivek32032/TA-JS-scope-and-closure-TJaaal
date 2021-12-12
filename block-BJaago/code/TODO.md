@@ -26,7 +26,7 @@ var userMessage = sayHelloToUser('Bran');
 
 <!-- Put your image below -->
 
-![img](./WhatsApp%20Image%202021-12-08%20at%2016.05.13.jpeg)
+![img](./img/img1.jpeg)
 
 2.
 
@@ -43,7 +43,7 @@ sayHi();
 
 <!-- Put your image below -->
 
-![](./img/image-name.jpg)
+![img2](./img/img2.png)
 
 3.
 
@@ -60,13 +60,13 @@ sayHi();
 
 <!-- Put your image below -->
 
-![](./img/image-name.jpg)
+![](./img/img3.png)
 
 4.
 
 ```js
-console.log(arr); // output
-console.log(username); // output
+console.log(arr); // output  undefined
+console.log(username); // output  undefined
 var usename = 'Sam';
 var arr = [1, 2, 3, 4, 5, 6];
 
@@ -74,3 +74,4 @@ function double(num) {
   return num * 2;
 }
 ```
+![](./img/img4.png)

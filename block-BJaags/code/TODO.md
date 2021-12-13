@@ -31,10 +31,7 @@ Create the execution context diagram of the following code line by line.
 
 ```js
 let marks = [34, 45, 56, 76];
-function multiplyArrayByN(arr, n) {
-  let final45Arr = [];
-  for (let elm of arr) {
-    finalArr.push(elm * 2);
+function multiplyArrayByN(arr, n) {gg
   }
   return finalArr;
 }

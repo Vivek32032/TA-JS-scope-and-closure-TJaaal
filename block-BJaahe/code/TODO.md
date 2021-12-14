@@ -15,7 +15,9 @@ function outer(str){
 ```js
 // Your code goes here
 function delay(cb,timeInMs){
- return serTimeout(cb,timeInMs);
+ return function(){
+   serTimeout(cb,timeInMs);
+ }
 }
 ```
 
@@ -24,7 +26,7 @@ function delay(cb,timeInMs){
 ```js
 function lastName(lastName) {
   //  Your code goes here
-  return function inner(firstName){
+  return function(firstName){
     console.log(firstName+" "+lastName)
   }
 }
@@ -48,7 +50,8 @@ function storyWriter() {
   let story = ""
   return {
     addWords : function(str){
-     return story+=str;
+     story+=str;
+     return story;
     },
     erase : function(){
       story = "";
@@ -84,7 +87,7 @@ function forEach(arr) {
   }
 }
 
-let next = [1, 2, 3, 4, 5];
+let next = forEach([1, 2, 3, 4, 5]);
 next(); // 1
 next(); // 2
 next(); // 3
@@ -123,10 +126,10 @@ function changeSalary(salary) {
   // Your code goes here
   return {
     raise : function(){
-      return (salary +=500);
+      return (salary + 500);
     },
     lower : function(){
-      return (salary -=500);
+      return (salary - 500);
     },
     current : function(){
       return salary;
@@ -180,7 +183,7 @@ The returned function accepts a string (children) and returns the children with 
 function createTag(tag) {
   // your code goes here
   return function(text){
-    let tagName = document.createElement(`${tag}`);
+    let tagName = document.createElement(tag);
     tagName.innerText = text;
     return tagName;
   }

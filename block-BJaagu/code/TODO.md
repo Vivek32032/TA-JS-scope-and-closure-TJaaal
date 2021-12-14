@@ -5,7 +5,7 @@ console.log(numA + numB); //OUTPUT NaN
 var numA = 21,
   numB = 30;
 ```
-here namA = undefined and numB is 30 in global exection context so if we add undefined with 30 we have NaN as an output.
+here namA and numB is equal to  undefined in global exection context so if we add undefined with undefined we have NaN as an output.
 Find the output of the code snippets below:
 
 ```js
@@ -52,8 +52,7 @@ here, `username` is declared in global scope so when we call sayHello function i
 Find the output of the code snippets below:
 
 ```js
-sayHello(); // OUTPUT ReferenceError: username is not defined
-    at sayHello
+sayHello(); // OUTPUT ReferenceError: username is not defined at sayHello
 let username = "Tyrion";
 function sayHello() {
   console.log(username);
@@ -110,7 +109,7 @@ let sayHello = () => {
   console.log(username);
   var username = "John";
 };
-sayHello(); // OUTPUT
+sayHello(); // OUTPUT undefined
 ```
 
 Find the output of the code snippets below:
@@ -121,8 +120,9 @@ let sayHello = () => {
   var username = "John";
   console.log(username);
 };
-sayHello(); // OUTPUT undefined
+sayHello(); // OUTPUT "John" 
 ```
+when sayHello is called it will first search the variable in local scope and it will find `username` value as "John" so it will console-log "John".
 
 Find the output of the code snippets below:
 

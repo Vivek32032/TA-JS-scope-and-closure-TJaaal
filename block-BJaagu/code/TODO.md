@@ -52,7 +52,7 @@ here, `username` is declared in global scope so when we call sayHello function i
 Find the output of the code snippets below:
 
 ```js
-sayHello(); // OUTPUT ReferenceError: username is not defined at sayHello
+sayHello(); // OUTPUT ReferenceError: username is not defined  at sayHello
 let username = "Tyrion";
 function sayHello() {
   console.log(username);

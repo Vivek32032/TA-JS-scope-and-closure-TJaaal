@@ -34,7 +34,7 @@ const final = name('Smith'); // final should be "Will Smith"
 function isInBetween(a, b) {
   // your code goes here
   return function(num){
-    return num>a && num<b ?true:false
+    return (num>a && num<b) ||(num<a && num>b)?true:false
   }
 }
 
@@ -66,7 +66,7 @@ callWithHello('How Are You?'); // Hello How Are You?
 function addGame(gameName,currentScore) {
   // your code goes here
   return function(){
-    return `Your score of ${gameName} is ${currentScore++}`
+    return `Your score of ${gameName} is ${++currentScore}`
 
   }
 }

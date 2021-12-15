@@ -10,9 +10,20 @@
 **You can use normal for loop for this function**
 
 ```js
-function loop() {
+function loop(initial,conditionalFn,updateFn,bodyFn) {
   // Your code goes here
+function repeat(){
+if(conditionalFn(initial)){
+  bodyFn(initial);
+  initial = updateFn(initial);
+  repeat();
+  }
+else {
+return};
+}repeat();
 }
+
+
 
 loop(
   3,
@@ -30,7 +41,12 @@ loop(
 Here's how it works. The function has an "accumulator value" which starts as the `initialValue` and accumulates the output of each loop. The array is iterated over, passing the accumulator and the next array element as arguments to the `callback`. The callback's return value becomes the new accumulator value. The next loop executes with this new accumulator value. In the example above, the accumulator begins at 0. `add(0,4)` is called. The accumulator's value is now 4. Then `add(4, 1)` to make it 5. Finally `add(5, 3)` brings it to 8, which is returned.
 
 ```js
-function reduce(array, callback, initialValue) {}
+function reduce(array, callback, initialValue) {
+  for(ele of array){
+  initialValue = callback(initialValue,ele);
+  }
+  return initialValue;
+}
 
 // Test
 var nums = [4, 1, 3];
@@ -43,7 +59,15 @@ reduce(nums, add, 0); //-> 8
 3. Construct a function intersection that compares input arrays and returns a new array with elements found in all of the inputs.
 
 ```js
-function intersection(arrays) {}
+function intersection(arrays) { 
+  let allArray = Array.from(arguments)
+    let match =[];
+  for(ele of allArray[0]){
+    if(allArray.every((arr)=>arr.includes(ele)))
+      {match.push(ele)};
+    }return match;
+       
+}
 
 // Test
 console.log(
@@ -58,7 +82,15 @@ console.log(
 4. Construct a function `union` that compares input arrays and returns a new array that contains all elements. If there are duplicate elements, only add it once to the new array. Preserve the order of the elements starting from the first element of the first input array.
 
 ```js
-function union(arrays) {}
+function union(arrays) {
+  let allArray = Array.from(arguments)
+    let newArray =[];
+for(let i=0;i<allArray.length;i++){
+      for(ele of allArray[i]){
+    if(!newArray.includes(ele))
+      {newArray.push(ele)};
+    }}return newArray;
+}
 
 // Test
 console.log(

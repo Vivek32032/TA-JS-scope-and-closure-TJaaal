@@ -408,10 +408,11 @@ function test(a) {
   let num1 = 21;
   return add(a, num1);
 }
-let sum;
 function add(a, b) {
   return a + b;
 }
+let sum;
+
 
 // Execution Phase
 sum = test(100);

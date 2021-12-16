@@ -53,8 +53,7 @@ function once(cb,...args) {
     let noOfCall=1;
   return function(){
     if(noOfCall=== 1){
-      para = args.reduce((acc,cv)=>acc.concat(" "+cv),"")
-       cb(para);
+       cb(...para);
        noOfCall++;
     }
   }
@@ -76,7 +75,7 @@ function nTimes(cb, times, ...rest) {
 
   return function(){
   if(noOfCall<times){
-    cb(rest);
+    cb(...rest);
     noOfCall++;
   }}
 }

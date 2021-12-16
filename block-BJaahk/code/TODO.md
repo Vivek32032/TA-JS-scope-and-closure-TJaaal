@@ -2,15 +2,21 @@
 
 1. Create a function named `censor` which accepts two parameter (fromWord, toWord) and returns a function when called.
 
-The returned function accepts a sentence. If the sentence contains the `fromWord` it should be replaced with `toWord`. Finally when the returned function is called it should return the new sentence.
+The returned function accepts a sentencetence. If the sentencetence contains the `fromWord` it should be replaced with `toWord`. Finally when the returned function is called it should return the new sentencetence.
 
 ```js
 function censor(fromWord, toWord) {
   //  Your code goes here
+  return function(sentencetence){
+    if(sentencetence.includes(fromWord)){
+      sentencetence = sentencetence.replace(fromWord, toWord);
+    }
+    return sentencetence;
+  }
 }
 
-let censorSentence = censor('World', 'Sam');
-censorSentence('Hello World'); // Hello Sam
+let censorsentencetence = censor('World', 'Sam');
+censorsentencetence('Hello World'); // Hello Sam
 
 let censorQuote = censor('die', 'live');
 censorQuote(`all men must die`); // all men must live
@@ -26,6 +32,25 @@ The returned function either accepts two parameter or one parameter.
 ```js
 function multipleCensor() {
   //  Your code goes here
+  let dictionary=[];
+  return function(...args){
+let result="";
+     if(args.length === 2){
+       dictionary.push(`${args[0]},${args[1]}`)
+     }else if(args.length === 1){
+        let sentence = args[0];
+       dictionary.forEach((str) => {
+        let wordToMatch = str.split(",")[0]
+        let wordToReplace = str.split(",")[1]
+        sentence = sentence.replace(wordToMatch,wordToReplace)
+       })
+        result = sentence;
+        return result;
+     }else {
+       alert('invalid input')
+     }
+
+  }
 }
 
 let censorQuote = multipleCensor();
@@ -49,9 +74,18 @@ The returned function accepts one parameter.
 - If the parameter is the same as the password it will return the object in which we stored the values.
 
 ```js
-function createCache() {
+function createCache(callBackFn,str) {
   // Your code goes here
+  let passValue={}
+  return function(pass){
+    if(pass !== str){
+       passValue[pass]=callBackFn(pass);
+    }else{
+      return passValue;
+    }
+  }
 }
+
 
 function add10(num) {
   return num + 10;
@@ -66,12 +100,27 @@ addCache(1); // 11
 addCache('foo'); // {12: 22, 100: 110, 1: 11}
 ```
 
-4. Change the above function in such a way that when the returned function is called with any other value than password. It should first check the object where we are storing the argument and return value. If the key is present return the value form the object itself. Otherwise call the callback function with the parameter.
+4. Change the above function in such a way that when the returned function is called with any other value than password. It should first check the object where we are storing the argument and return value. If the key is presentencet return the value form the object itself. Otherwise call the callback function with the parameter.
 
 ```js
-function createCache() {
+function createCache(callBackFn,str) {
   // Your code goes here
+    let passValue={}
+  return function(pass){
+    if(pass !== str){
+      if(Object.keys(passValue).includes(`${pass}`)){
+         return passValue[pass]
+      }else{
+       passValue[pass]=callBackFn(pass);
+       }
+    }else{
+      return passValue;
+    }
+  }
 }
+
+
+
 
 function add10(num) {
   return num + 10;

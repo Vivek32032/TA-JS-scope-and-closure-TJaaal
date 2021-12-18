@@ -41,6 +41,15 @@ function intersection(...arrays) {
 
 
 
+function intersection(...arrays){
+  return arrays.reduce((acc,cv)=> {
+    acc= acc.filter(elm => cv.includes(elm));
+    return acc;
+  })
+}
+
+
+
 // Test
 console.log(
   intersection(
@@ -55,29 +64,10 @@ console.log(
 
 ```js
 function union(...arrays) {
-   return arrays.reduce((acc,cv,index,arr)=> {
-     if(index>0){
-          for (let i=0;i<cv.length;i++)
-            {
-
-              for (let j=0;j<acc.length;j++)
-              {
-                 if(cv[i]!==aac[j])
-                 {
-                  acc.push(cv[i]);
-                 }
-              }
-
-            }
-          }else{
-            acc = cv;
-          }
-   
-  
-  
- 
+   return arrays.reduce((acc,cv)=> {
+     acc =acc.filter(elm => !cv.includes(elm)).concat(cv);     
   return acc;
-  },[])
+  })
 
 }
 
